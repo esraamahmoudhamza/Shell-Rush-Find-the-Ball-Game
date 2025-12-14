@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shell Rush — Find The Ball</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-dark">
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">⚡</div>
+        <div>
+          <h1>Find the Ball</h1>
+          <p class="sub">Fast • Sporty • 3D Cups</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label for="level">Level</label>
+        <select id="level">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="resetBtn" class="btn">Reset</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="stage">
+        <div class="table">
+          <!-- Ball placed absolutely; hidden except during peek/reveal -->
+          <div id="ball" class="ball hidden" aria-hidden="true"></div>
+
+          <!-- cups: each cup has data-id (logical id 0..2) -->
+          <div id="slots" class="slots">
+            <button class="cup" data-id="0" aria-label="Cup 1">
+              <div class="cup-top"></div>
+              <div class="cup-body"></div>
+            </button>
+            <button class="cup" data-id="1" aria-label="Cup 2">
+              <div class="cup-top"></div>
+              <div class="cup-body"></div>
+            </button>
+            <button class="cup" data-id="2" aria-label="Cup 3">
+              <div class="cup-top"></div>
+              <div class="cup-body"></div>
+            </button>
+          </div>
+
+          <div id="confetti" class="confetti" aria-hidden="true"></div>
+        </div>
+
+        <div id="message" class="message">Press <strong>Start</strong> to begin</div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="row"><span>Score</span><strong id="score">0</strong></div>
+          <div class="row"><span>Rounds</span><strong id="rounds">0</strong></div>
+          <div class="row"><span>Speed</span><strong id="speedVal">—</strong></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">HTML • CSS • JavaScript — Orange × Dark Gray</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
